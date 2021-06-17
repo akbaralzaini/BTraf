@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BTraf</string>
+    <string name="icon_person">icon person</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="user_name">User Name</string>
+    <string name="register">Register</string>
+    <string name="belum_punya_akun">belum punya akun?</string>
+    <string name="email">email</string>
 </resources>

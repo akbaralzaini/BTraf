@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroud"
+    android:padding="12dp"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/icon_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bus_person"
+        android:layout_marginTop="60dp"
+        android:padding="18dp"
+        android:contentDescription="@string/icon_person" />
+
+    <TextView
+        android:id="@+id/login_txt"
+        android:layout_below="@id/icon_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:gravity="center"
+        android:textColor="@color/textColor"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        android:layout_below="@id/login_txt"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/black"
+            android:hint="email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@id/email"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/ic_action_name"
+            android:drawableTint="@color/black"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:hint="@string/password"
+            android:id="@+id/edtPassword"
+            android:drawablePadding="10dp"
+            android:inputType="textPassword"
+            android:autofillHints="@string/password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:text="@string/login"
+        android:layout_margin="40dp"
+        android:padding="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textQuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/belum_punya_akun"/>
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
