@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroud"
     android:padding="12dp"
-    tools:context=".RegisterActivity">
+    tools:context=".interfaces.RegisterActivity">
 
     <ImageView
         android:id="@+id/icon_person"
@@ -47,10 +47,10 @@
             android:drawableTint="@color/black"
             android:padding="10dp"
             android:singleLine="true"
-            android:hint="@string/email"
-            android:id="@+id/edtEmailReg"
+            android:hint="@string/user_name"
+            android:id="@+id/edtUsernameReg"
             android:drawablePadding="10dp"
-            android:inputType="textEmailAddress"/>
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstName"

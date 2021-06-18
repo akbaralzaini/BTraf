@@ -11,15 +11,15 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.BTraf">
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SplashScreenActivity" >
+        <activity android:name=".interfaces.RegisterActivity"/>
+        <activity android:name=".interfaces.LoginActivity" />
+        <activity android:name=".interfaces.SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".interfaces.MainActivity" android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
 
         </activity>
     </application>

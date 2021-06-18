@@ -1,4 +1,4 @@
-package project.akbaralzaini.btraf.models;
+package project.akbaralzaini.btraf.models.user;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,8 +8,8 @@ public class User {
 
     @SerializedName("id")
     public int id;
-    @SerializedName("email")
-    public String email;
+    @SerializedName("username")
+    public String username;
     @SerializedName("firstName")
     public String firstName;
     @SerializedName("lastName")
@@ -22,9 +22,9 @@ public class User {
     public User() {
     }
 
-    public User(int id, String email, String firstName, String lastName, String mobileNumber, List<Role> roles) {
+    public User(int id, String username, String firstName, String lastName, String mobileNumber, List<Role> roles) {
         this.id = id;
-        this.email = email;
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
@@ -39,12 +39,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {

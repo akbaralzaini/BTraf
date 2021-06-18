@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroud"
     android:padding="12dp"
-    tools:context=".LoginActivity">
+    tools:context=".interfaces.LoginActivity">
 
     <ImageView
         android:id="@+id/icon_person"
@@ -39,15 +39,15 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtUsername"
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:backgroundTint="@color/white"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="10dp"
             android:drawableTint="@color/black"
-            android:hint="email"
-            android:inputType="textEmailAddress"
+            android:hint="@string/user_name"
+            android:inputType="text"
             android:padding="10dp"
             android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>

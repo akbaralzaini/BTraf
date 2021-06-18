@@ -1,13 +1,12 @@
-package project.akbaralzaini.btraf.models;
+package project.akbaralzaini.btraf.models.user.register;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserRegister {
-    @SerializedName("email")
-    public String email;
+    @SerializedName("username")
+    public String username;
     @SerializedName("firstName")
     public String firstName;
     @SerializedName("lastName")
@@ -16,27 +15,27 @@ public class UserRegister {
     public String mobileNumber;
     @SerializedName("password")
     public String password;
-    @SerializedName("roles")
-    public ArrayList<String> roles;
+    @SerializedName("role")
+    public ArrayList<String> role;
 
     public UserRegister() {
     }
 
-    public UserRegister(String email, String firstName, String lastName, String mobileNumber, String password, ArrayList<String> roles) {
-        this.email = email;
+    public UserRegister(String username, String firstName, String lastName, String mobileNumber, String password, ArrayList<String> roles) {
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
         this.password = password;
-        this.roles = roles;
+        this.role = roles;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {
@@ -72,10 +71,10 @@ public class UserRegister {
     }
 
     public ArrayList<String> getRoles() {
-        return roles;
+        return role;
     }
 
     public void setRoles(ArrayList<String> roles) {
-        this.roles = roles;
+        this.role = roles;
     }
 }

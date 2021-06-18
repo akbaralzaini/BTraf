@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 
 import java.util.HashMap;
 
-import project.akbaralzaini.btraf.LoginActivity;
+import project.akbaralzaini.btraf.interfaces.LoginActivity;
 
 public class MySession {
 
@@ -21,8 +21,11 @@ public class MySession {
     private static final String IS_LOGIN = "IsLoggedIn";
 
     public static final String KEY_ID = "_id";
-    public static final String KEY_EMAIL = "email";
-    public static final String KEY_NAMA = "nama";
+    public static final String KEY_USERNAME = "username";
+    public static final String KEY_FIRST_NAME = "first_name";
+    public static final String KEY_LAST_NAME = "last_name";
+    public static final String KEY_MOBILE_NUMBER = "mobile_number";
+    public static final String KEY_ROLE_NAME = "role_name";
     public static final String KEY_TOKEN = "token";
 
     public MySession(Context context){
@@ -31,11 +34,15 @@ public class MySession {
         editor = pref.edit();
     }
 
-    public void createLoginSession(int _id, String email, String nama, String token){
+    public void createLoginSession(int _id, String username, String first_name, String last_name,
+                                   String mobile_number, String role_name, String token){
         editor.putBoolean(IS_LOGIN, true);
-        editor.putInt(KEY_ID, _id);
-        editor.putString(KEY_EMAIL, email);
-        editor.putString(KEY_NAMA, nama);
+        editor.putString(KEY_ID, String.valueOf(_id));
+        editor.putString(KEY_USERNAME, username);
+        editor.putString(KEY_FIRST_NAME, first_name);
+        editor.putString(KEY_LAST_NAME, last_name);
+        editor.putString(KEY_MOBILE_NUMBER, mobile_number);
+        editor.putString(KEY_ROLE_NAME, role_name);
         editor.putString(KEY_TOKEN, token);
         editor.commit();
     }
@@ -52,9 +59,12 @@ public class MySession {
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<>();
 
-        user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
-        user.put(KEY_ID, pref.getString(KEY_ID, null));
-        user.put(KEY_NAMA, pref.getString(KEY_NAMA, null));
+        user.put(KEY_USERNAME, pref.getString(KEY_USERNAME, null));
+        user.put(KEY_ID, pref.getString(KEY_ID,null));
+        user.put(KEY_FIRST_NAME, pref.getString(KEY_FIRST_NAME, null));
+        user.put(KEY_LAST_NAME, pref.getString(KEY_LAST_NAME, null));
+        user.put(KEY_MOBILE_NUMBER, pref.getString(KEY_MOBILE_NUMBER, null));
+        user.put(KEY_ROLE_NAME, pref.getString(KEY_ROLE_NAME, null));
         user.put(KEY_TOKEN, pref.getString(KEY_TOKEN, null));
 
         return user;

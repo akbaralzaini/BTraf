@@ -1,4 +1,4 @@
-package project.akbaralzaini.btraf.models;
+package project.akbaralzaini.btraf.models.user;
 
 import com.google.gson.annotations.SerializedName;
 

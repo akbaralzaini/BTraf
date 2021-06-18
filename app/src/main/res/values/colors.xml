@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#1D247C</color>
     <color name="backgroud">#F5F2FF</color>
+    <color name="blue">#03A9F4</color>
+    <color name="blueDark">#056B9A</color>
+    <color name="purple_dark">#C0B4CF</color>
 </resources>
