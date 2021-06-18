@@ -15,25 +15,10 @@ public class ApiClient {
 
     public static Retrofit getClient(String token) {
 
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-
-        httpClient.addInterceptor(chain -> {
-            Request original = chain.request();
-
-            // Request customization: add request headers
-            Request.Builder requestBuilder = original.newBuilder()
-                    .header("Authorization", "Bearer "+token) // <-- this is the important line
-                    .header("Content-Type", "application/json");
-
-            Request request = requestBuilder.build();
-            return chain.proceed(request);
-        });
-
         if (retrofit==null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
-                    .client(httpClient.build())
                     .build();
 
 
