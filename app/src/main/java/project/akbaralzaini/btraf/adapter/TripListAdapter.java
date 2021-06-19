@@ -36,11 +36,13 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull TripListAdapter.MyViewHolder holder, int position) {
+        String fare = "Rp. "+ String.valueOf(tripList.get(position).getFare());
+        String times = "- "+ tripList.get(position).getJourneyTime() + " menit -";
         holder.tvBus.setText(tripList.get(position).getBus().getCode());
         holder.tvSource.setText(tripList.get(position).getSourceStop().name);
         holder.tvDestination.setText(tripList.get(position).getDestStop().getName());
-        holder.tvTime.setText(tripList.get(position).getJourneyTime());
-        holder.tvFare.setText(String.valueOf(tripList.get(position).getFare()));
+        holder.tvTime.setText(times);
+        holder.tvFare.setText(fare);
         holder.tvAgency.setText(tripList.get(position).getAgency().getName());
     }
 

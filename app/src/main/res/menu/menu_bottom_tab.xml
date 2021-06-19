@@ -17,8 +17,8 @@
 
     <item
         android:id="@+id/tab_agency"
-        android:title="Agency"
-        android:icon="@drawable/ic_agency"
+        android:title="Ticket"
+        android:icon="@drawable/ic_ticket"
         app:showAsAction="always|withText"/>
 
     <item

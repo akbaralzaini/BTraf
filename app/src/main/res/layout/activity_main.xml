@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".interfaces.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_above="@+id/bottomNavigationView"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="5dp">
         <FrameLayout
@@ -26,11 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:layout_scrollFlags="scroll|enterAlways|snap"
         app:itemTextColor="@color/color_bottom_navigation"
         app:itemIconTint="@color/color_bottom_navigation"
-        android:background="@color/purple_500"
+        android:background="@drawable/bottom_backgroud"
         app:menu="@menu/menu_bottom_tab" />
 
 </RelativeLayout>

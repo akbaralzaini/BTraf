@@ -3,17 +3,12 @@ package project.akbaralzaini.btraf.interfaces;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import project.akbaralzaini.btraf.R;
-import project.akbaralzaini.btraf.interfaces.ui.agency.AgencyFragment;
+import project.akbaralzaini.btraf.interfaces.ui.ticket.TicketFragment;
 import project.akbaralzaini.btraf.interfaces.ui.bus.BusFragment;
 import project.akbaralzaini.btraf.interfaces.ui.home.HomeFragment;
 import project.akbaralzaini.btraf.interfaces.ui.profile.ProfileFragment;
@@ -39,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }else if (id == R.id.tab_bus){
                 fragment = new BusFragment();
             }else if (id == R.id.tab_agency){
-                fragment = new AgencyFragment();
+                fragment = new TicketFragment();
             }
             return loadFragment(fragment);
         });

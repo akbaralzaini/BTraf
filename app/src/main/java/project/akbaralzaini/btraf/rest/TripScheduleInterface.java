@@ -13,5 +13,5 @@ public interface TripScheduleInterface {
     Call<TripSchedule> getTripSchedule();
 
     @GET("v1/trip/")
-    Call<List<Trip>> getTripList(@Header("Authorization") String token);
+    Call<List<Trip>> getTripList();
 }

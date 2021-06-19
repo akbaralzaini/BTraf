@@ -47,7 +47,9 @@ public class HomeFragment extends Fragment {
         rvListTrip = rootView.findViewById(R.id.rvListTrip);
         mLayoutManagerTrip =new LinearLayoutManager(getActivity());
         rvListTrip.setLayoutManager(mLayoutManagerTrip);
-        tripScheduleInterface = ApiClient.getClient(sUsernya.get(MySession.KEY_TOKEN)).create(TripScheduleInterface.class);
+        String key = sUsernya.get(MySession.KEY_TOKEN);
+        Log.d("tests",key);
+        tripScheduleInterface = ApiClient.getClient(""+key).create(TripScheduleInterface.class);
         refresh();
 
         // Inflate the layout for this fragment
@@ -56,7 +58,7 @@ public class HomeFragment extends Fragment {
 
     private void refresh() {
         HashMap<String, String> sUsernya = session.getUserDetails();
-        Call<List<Trip>> listCall = tripScheduleInterface.getTripList("Bearer "+sUsernya.get(MySession.KEY_TOKEN));
+        Call<List<Trip>> listCall = tripScheduleInterface.getTripList();
         listCall.enqueue(new Callback<List<Trip>>() {
             @Override
             public void onResponse(Call<List<Trip>> call, Response<List<Trip>> response) {
