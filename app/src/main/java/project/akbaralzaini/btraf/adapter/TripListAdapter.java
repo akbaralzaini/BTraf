@@ -1,25 +1,32 @@
 package project.akbaralzaini.btraf.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.zxing.MultiFormatWriter;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 import project.akbaralzaini.btraf.R;
+import project.akbaralzaini.btraf.interfaces.ui.bus.BookingTicketActivity;
+import project.akbaralzaini.btraf.interfaces.ui.bus.TripScheduleActivity;
 import project.akbaralzaini.btraf.models.trip.Trip;
 
 public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.MyViewHolder>{
 
     List<Trip> tripList;
     Context context;
+
 
     public TripListAdapter(List<Trip> tripList, Context context) {
         this.tripList = tripList;
@@ -44,6 +51,12 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.MyView
         holder.tvTime.setText(times);
         holder.tvFare.setText(fare);
         holder.tvAgency.setText(tripList.get(position).getAgency().getName());
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent i = new Intent(context, TripScheduleActivity.class);
+            i.putExtra("idTrip",tripList.get(position).getId());
+            context.startActivity(i);
+        });
     }
 
     @Override

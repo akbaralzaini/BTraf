@@ -24,4 +24,5 @@
     <color name="accent">#ED683B</color>
     <color name="base_accent">#FCEFE9</color>
     <color name="back_base">#EDEFFE</color>
+    <color name="back_transpart">#D3222222</color>
 </resources>

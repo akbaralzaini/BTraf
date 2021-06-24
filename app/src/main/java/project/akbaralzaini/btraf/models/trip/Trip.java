@@ -86,4 +86,17 @@ public class Trip {
     public void setAgency(Agency agency) {
         this.agency = agency;
     }
+
+    @Override
+    public String toString() {
+        return "Trip{" +
+                "id=" + id +
+                ", fare=" + fare +
+                ", journeyTime='" + journeyTime + '\'' +
+                ", sourceStop=" + sourceStop +
+                ", destStop=" + destStop +
+                ", bus=" + bus +
+                ", agency=" + agency +
+                '}';
+    }
 }

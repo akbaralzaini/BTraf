@@ -48,7 +48,6 @@ public class HomeFragment extends Fragment {
         mLayoutManagerTrip =new LinearLayoutManager(getActivity());
         rvListTrip.setLayoutManager(mLayoutManagerTrip);
         String key = sUsernya.get(MySession.KEY_TOKEN);
-        Log.d("tests",key);
         tripScheduleInterface = ApiClient.getClient(""+key).create(TripScheduleInterface.class);
         refresh();
 
@@ -63,9 +62,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Trip>> call, Response<List<Trip>> response) {
                 List<Trip> tripList = response.body();
-                Log.d("tests", String.valueOf(response.code()));
-                mTripAdapter = new TripListAdapter(tripList,getContext());
-                rvListTrip.setAdapter(mTripAdapter);
+                if (tripList != null && !tripList.isEmpty()){
+                    mTripAdapter = new TripListAdapter(tripList,getContext());
+                    rvListTrip.setAdapter(mTripAdapter);
+                }
             }
 
             @Override
