@@ -160,39 +160,46 @@ public class BookingTicketActivity extends AppCompatActivity implements View.OnC
 
 
         Intent i = getIntent();
-        TripSchedule tripSchedule = (TripSchedule) i.getParcelableExtra("schedule");
+        Bundle bundle = i.getExtras();
+        try {
+            TripSchedule tripSchedule = (TripSchedule) bundle.getSerializable("value");
 
-        String route = tripSchedule.getTripDetail().getSourceStop().getName()+" to "+tripSchedule.getTripDetail().getDestStop().getName();
-        String fares = "Rp. "+tripSchedule.getTripDetail().getFare();
-        tvFare.setText(fares);
-        tvRoute.setText(route);
-        tvDate.setText(tripSchedule.getTripDate());
-        btnBuy.setOnClickListener(v -> {
-            BookingTicket bookingTicket = new BookingTicket(false,tripSchedule.getTripDate(),Integer.parseInt(Objects.requireNonNull(sUsernya.get(MySession.KEY_ID))),numberSeatPicked,tripSchedule.getId());
-            Call<MessageTicket> call = ticketInterface.bookingTicket(bookingTicket);
-            call.enqueue(new Callback<MessageTicket>() {
-                @Override
-                public void onResponse(Call<MessageTicket> call, Response<MessageTicket> response) {
-                    MessageTicket messageTicket = response.body();
-                    if (messageTicket != null){
-                        new AlertDialog.Builder(BookingTicketActivity.this)
-                                .setTitle("Information")
-                                .setMessage(messageTicket.getMessage())
-                                .setCancelable(false)
-                                .setPositiveButton("ok", (dialog, which) -> {
-                                    Intent intent = new Intent(BookingTicketActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                }).show();
+            String route = tripSchedule.getTripDetail().getSourceStop().getName()+" to "+tripSchedule.getTripDetail().getDestStop().getName();
+            String fares = "Rp. "+tripSchedule.getTripDetail().getFare();
+            tvFare.setText(fares);
+            tvRoute.setText(route);
+            tvDate.setText(tripSchedule.getTripDate());
+            btnBuy.setOnClickListener(v -> {
+                BookingTicket bookingTicket = new BookingTicket(false,tripSchedule.getTripDate(),Integer.parseInt(Objects.requireNonNull(sUsernya.get(MySession.KEY_ID))),numberSeatPicked,tripSchedule.getId());
+                Call<MessageTicket> call = ticketInterface.bookingTicket(bookingTicket);
+                call.enqueue(new Callback<MessageTicket>() {
+                    @Override
+                    public void onResponse(Call<MessageTicket> call, Response<MessageTicket> response) {
+                        MessageTicket messageTicket = response.body();
+                        if (messageTicket != null){
+                            new AlertDialog.Builder(BookingTicketActivity.this)
+                                    .setTitle("Information")
+                                    .setMessage(messageTicket.getMessage())
+                                    .setCancelable(false)
+                                    .setPositiveButton("ok", (dialog, which) -> {
+                                        Intent intent = new Intent(BookingTicketActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }).show();
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<MessageTicket> call, Throwable t) {
+                    @Override
+                    public void onFailure(Call<MessageTicket> call, Throwable t) {
 
-                }
+                    }
+                });
             });
-        });
+        }
+        catch (Exception e){
+            Toast.makeText(this, "aaaa", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 

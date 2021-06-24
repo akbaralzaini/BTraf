@@ -2,6 +2,7 @@ package project.akbaralzaini.btraf.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,7 +53,9 @@ public class TripSceduleListAdapter extends RecyclerView.Adapter<TripSceduleList
 
         holder.itemView.setOnClickListener(v -> {
             Intent i = new Intent(context, BookingTicketActivity.class);
-            i.putExtra("schedule", String.valueOf(tripList.get(position)));
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("value", tripList.get(position));
+            i.putExtras(bundle);
             context.startActivity(i);
         });
     }
@@ -64,14 +67,12 @@ public class TripSceduleListAdapter extends RecyclerView.Adapter<TripSceduleList
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView tvCost,tvSeat,tvStop,tvAgency;
-        public Button btnBooking;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tvAgency = itemView.findViewById(R.id.tvAgency);
             tvCost = itemView.findViewById(R.id.tvFare);
             tvSeat = itemView.findViewById(R.id.tvAvailibleSeat);
             tvStop = itemView.findViewById(R.id.tvStop);
-            btnBooking = itemView.findViewById(R.id.btnBooking);
         }
     }
 }

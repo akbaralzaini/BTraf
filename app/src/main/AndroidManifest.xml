@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BTraf"
         android:usesCleartextTraffic="true">
+        <activity android:name=".interfaces.ui.profile.UpdatePasswordActivity"></activity>
+        <activity android:name=".interfaces.ui.profile.EditProfilActivity" />
         <activity
             android:name=".interfaces.ui.bus.TripScheduleActivity"
             android:theme="@style/NoActionBar" />

@@ -2,7 +2,9 @@ package project.akbaralzaini.btraf.models.trip;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Trip {
+import java.io.Serializable;
+
+public class Trip implements Serializable {
     @SerializedName("id")
     public int id;
     @SerializedName("fare")

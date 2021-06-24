@@ -32,16 +32,6 @@
                     android:textColor="@color/text_color"
                     android:textStyle="bold"/>
             </LinearLayout>
-            <Button
-                android:id="@+id/btnBooking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Booking"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                style="@style/MyButtonTheme"
-                android:textColor="@color/white"
-                android:drawableLeft="@drawable/ic_tickets"/>
         </LinearLayout>
 
         <View
