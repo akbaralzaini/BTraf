@@ -1,7 +1,7 @@
 # BTraf
 ## akses login
-username : admin
-password : bcafinanceh8
+> username : admin
+> password : bcafinanceh8
 
 ## link apk release
 https://github.com/akbaralzaini/BTraf/blob/main/app/release/app-release.apk
